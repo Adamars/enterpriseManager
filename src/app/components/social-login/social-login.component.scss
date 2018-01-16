@@ -45,7 +45,14 @@ button {
   height: 44px;
 }
 
-#loginForm {
+.main {
   max-width: 380px;
+  text-align: center;
+}
+
+.photo {
+  background: no-repeat 50% 50%;
+  border-radius: 50%;
+  margin: 0 auto;
 }
 

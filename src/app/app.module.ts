@@ -7,7 +7,7 @@ import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './routing/routing.module';
 import {AuthServiceConfig, FacebookLoginProvider, GoogleLoginProvider, SocialLoginModule} from 'angular4-social-login';
 import {SocialLoginComponent} from './components/social-login/social-login.component';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const config = new AuthServiceConfig([
   {
@@ -35,7 +35,8 @@ export function provideConfig() {
     FormsModule,
     SocialLoginModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {

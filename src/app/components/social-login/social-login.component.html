@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="main" id="loginForm">
+  <div *ngIf="!user; else loggedUser" class="main">
     <h3>Please Log In</h3>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12">
@@ -24,4 +24,28 @@
       </div>
     </div>
   </div>
+
+  <ng-template #loggedUser>
+    <div class="main">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <img class="card-img-top img-responsive photo" src="{{ user.photoUrl }}">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          {{ user.name }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          {{ user.email }}
+        </div>
+      </div>
+      <button class="btn btn-danger" (click)="signOut()">Sign out</button>
+      <button class="btn btn-success" (click)="signOut()">Continue</button>
+    </div>
+  </ng-template>
 </div>

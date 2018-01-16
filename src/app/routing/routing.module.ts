@@ -6,7 +6,8 @@ import {DemoComponent} from '../components/demo/demo.component';
 
 const routes: Routes = [
   {path: 'social', component: SocialLoginComponent},
-  {path: '**', component: DemoComponent}];
+  {path: '**', component: DemoComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {useHash: false})],

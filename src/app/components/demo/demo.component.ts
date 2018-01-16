@@ -1,17 +1,17 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+
 import {AuthService, FacebookLoginProvider, GoogleLoginProvider, SocialUser} from 'angular4-social-login';
 
 @Component({
-  selector: 'app-social-login',
-  templateUrl: './social-login.component.html',
-  styleUrls: ['./social-login.component.scss']
+  selector: 'app-demo',
+  templateUrl: './demo.component.html',
+  styleUrls: ['./demo.component.scss']
 })
-export class SocialLoginComponent implements OnInit {
+export class DemoComponent implements OnInit {
 
   user: SocialUser;
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService) {
   }
 
   ngOnInit() {
@@ -35,4 +35,3 @@ export class SocialLoginComponent implements OnInit {
   }
 
 }
-
