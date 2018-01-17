@@ -4,12 +4,12 @@
                [opened]="!isScreenSmall()"
                [mode]="isScreenSmall() ? 'over' : 'side'">
     <mat-toolbar color="primary">
-      Contacts
+      Dashboards
     </mat-toolbar>
 
     <mat-nav-list>
       <mat-list-item *ngFor="let user of users | async">
-        <a matLine [routerLink]="['/contactmanager', user.id]">
+        <a matLine [routerLink]="['/', user.id]">
           <mat-icon svgIcon="{{user.avatar}}"></mat-icon>
           {{ user.name }}
         </a>

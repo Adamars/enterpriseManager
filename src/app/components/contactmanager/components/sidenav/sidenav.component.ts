@@ -15,6 +15,7 @@ const SMALL_WIDTH_BREAKPOINT = 720;
 export class SidenavComponent implements OnInit {
 
   users: Observable<User[]>;
+  springUsers: User[];
   isDarkTheme: boolean = false;
   dir: string = 'ltr';
   @ViewChild(MatSidenav) sidenav: MatSidenav;
@@ -40,6 +41,7 @@ export class SidenavComponent implements OnInit {
   ngOnInit() {
     this.users = this.userService.users;
     this.userService.loadAll();
+
 
     this.router.events.subscribe(() => {
       if (this.isScreenSmall())

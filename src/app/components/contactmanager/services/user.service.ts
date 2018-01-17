@@ -7,6 +7,8 @@ import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class UserService {
 
+  private _users: BehaviorSubject<User[]>;
+
   private dataStore: {
     users: User[]
   };
@@ -15,8 +17,6 @@ export class UserService {
     this.dataStore = {users: []};
     this._users = new BehaviorSubject<User[]>([]);
   }
-
-  private _users: BehaviorSubject<User[]>;
 
   get users(): Observable<User[]> {
     return this._users.asObservable();
@@ -36,7 +36,7 @@ export class UserService {
   }
 
   loadAll() {
-    const usersUrl = 'https://angular-material-api.azurewebsites.net/users';
+    const usersUrl = 'http://localhost:8080/users/';
 
     return this.http.get<User[]>(usersUrl)
       .subscribe(data => {
